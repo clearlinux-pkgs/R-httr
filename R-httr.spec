@@ -4,21 +4,21 @@
 #
 Name     : R-httr
 Version  : 1.1.0
-Release  : 27
+Release  : 28
 URL      : http://cran.r-project.org/src/contrib/httr_1.1.0.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/httr_1.1.0.tar.gz
 Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
-Requires: R-R6
-Requires: R-jsonlite
 Requires: R-openssl
+Requires: R-jsonlite
 Requires: R-curl
-BuildRequires : R-R6
+Requires: R-memoise
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-jsonlite
 BuildRequires : R-knitr
+BuildRequires : R-memoise
 BuildRequires : R-openssl
 BuildRequires : clr-R-helpers
 
@@ -37,6 +37,8 @@ BuildRequires : clr-R-helpers
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -45,6 +47,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library httr
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
