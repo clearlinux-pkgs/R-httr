@@ -4,7 +4,7 @@
 #
 Name     : R-httr
 Version  : 1.2.0
-Release  : 29
+Release  : 30
 URL      : http://cran.r-project.org/src/contrib/httr_1.2.0.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/httr_1.2.0.tar.gz
 Summary  : Tools for Working with URLs and HTTP
@@ -15,14 +15,12 @@ Requires: R-jsonlite
 Requires: R-curl
 Requires: R-mime
 Requires: R-xml2
-Requires: R-readr
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-jsonlite
 BuildRequires : R-knitr
 BuildRequires : R-mime
 BuildRequires : R-openssl
-BuildRequires : R-readr
 BuildRequires : R-xml2
 BuildRequires : clr-R-helpers
 
