@@ -4,7 +4,7 @@
 #
 Name     : R-httr
 Version  : 1.2.0
-Release  : 30
+Release  : 31
 URL      : http://cran.r-project.org/src/contrib/httr_1.2.0.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/httr_1.2.0.tar.gz
 Summary  : Tools for Working with URLs and HTTP
