@@ -4,22 +4,20 @@
 #
 Name     : R-httr
 Version  : 1.2.1
-Release  : 41
+Release  : 42
 URL      : http://cran.r-project.org/src/contrib/httr_1.2.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/httr_1.2.1.tar.gz
 Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
-Requires: R-openssl
-Requires: R-jsonlite
 Requires: R-curl
-Requires: R-mime
+Requires: R-jsonlite
+Requires: R-openssl
 Requires: R-xml2
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-jsonlite
 BuildRequires : R-knitr
-BuildRequires : R-mime
 BuildRequires : R-openssl
 BuildRequires : R-xml2
 BuildRequires : clr-R-helpers
@@ -34,12 +32,15 @@ BuildRequires : clr-R-helpers
 %setup -q -c -n httr
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1484540422
+export SOURCE_DATE_EPOCH=1492798898
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484540422
+export SOURCE_DATE_EPOCH=1492798898
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -55,7 +56,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library httr || :
 
@@ -67,6 +68,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/httr/LICENSE
 /usr/lib64/R/library/httr/Meta/Rd.rds
 /usr/lib64/R/library/httr/Meta/demo.rds
+/usr/lib64/R/library/httr/Meta/features.rds
 /usr/lib64/R/library/httr/Meta/hsearch.rds
 /usr/lib64/R/library/httr/Meta/links.rds
 /usr/lib64/R/library/httr/Meta/nsInfo.rds
