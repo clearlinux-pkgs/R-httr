@@ -4,7 +4,7 @@
 #
 Name     : R-httr
 Version  : 1.2.1
-Release  : 46
+Release  : 47
 URL      : http://cran.r-project.org/src/contrib/httr_1.2.1.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/httr_1.2.1.tar.gz
 Summary  : Tools for Working with URLs and HTTP
@@ -12,15 +12,15 @@ Group    : Development/Tools
 License  : MIT
 Requires: R-curl
 Requires: R-jsonlite
-Requires: R-mime
 Requires: R-openssl
+Requires: R-stringi
 Requires: R-xml2
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-jsonlite
 BuildRequires : R-knitr
-BuildRequires : R-mime
 BuildRequires : R-openssl
+BuildRequires : R-stringi
 BuildRequires : R-xml2
 BuildRequires : clr-R-helpers
 
@@ -38,11 +38,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1494024547
+export SOURCE_DATE_EPOCH=1494025708
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1494024547
+export SOURCE_DATE_EPOCH=1494025708
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
