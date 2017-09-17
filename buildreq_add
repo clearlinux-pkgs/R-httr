@@ -2,3 +2,5 @@
 # picked up automatically. One name per line, no whitespace.
 R-bitops
 R-knitr
+R-png
+R-httpuv
