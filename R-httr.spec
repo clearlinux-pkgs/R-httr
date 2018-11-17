@@ -4,7 +4,7 @@
 #
 Name     : R-httr
 Version  : 1.3.1
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/httr_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httr_1.3.1.tar.gz
 Summary  : Tools for Working with URLs and HTTP
@@ -13,7 +13,6 @@ License  : MIT
 Requires: R-curl
 Requires: R-jsonlite
 Requires: R-openssl
-Requires: R-xml2
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-httpuv
@@ -21,8 +20,7 @@ BuildRequires : R-jsonlite
 BuildRequires : R-knitr
 BuildRequires : R-openssl
 BuildRequires : R-png
-BuildRequires : R-xml2
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 (GET(), POST(), etc). Configuration functions make it easy to control
@@ -36,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523308702
+export SOURCE_DATE_EPOCH=1542430617
 
 %install
+export SOURCE_DATE_EPOCH=1542430617
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523308702
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,7 +74,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library httr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
+cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 
 
 %files
