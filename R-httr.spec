@@ -4,16 +4,14 @@
 #
 Name     : R-httr
 Version  : 1.4.0
-Release  : 71
+Release  : 72
 URL      : https://cran.r-project.org/src/contrib/httr_1.4.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httr_1.4.0.tar.gz
 Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
-Requires: R-curl
-Requires: R-jsonlite
-Requires: R-mime
-Requires: R-openssl
+Requires: R-withr
+Requires: R-xml2
 BuildRequires : R-bitops
 BuildRequires : R-curl
 BuildRequires : R-httpuv
@@ -22,6 +20,8 @@ BuildRequires : R-knitr
 BuildRequires : R-mime
 BuildRequires : R-openssl
 BuildRequires : R-png
+BuildRequires : R-withr
+BuildRequires : R-xml2
 BuildRequires : buildreq-R
 
 %description
@@ -40,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549272529
+export SOURCE_DATE_EPOCH=1552833478
 
 %install
-export SOURCE_DATE_EPOCH=1549272529
+export SOURCE_DATE_EPOCH=1552833478
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,8 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library httr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  httr || :
 
 
 %files
@@ -133,3 +132,24 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/httr/help/paths.rds
 /usr/lib64/R/library/httr/html/00Index.html
 /usr/lib64/R/library/httr/html/R.css
+/usr/lib64/R/library/httr/tests/testthat.R
+/usr/lib64/R/library/httr/tests/testthat/data.txt
+/usr/lib64/R/library/httr/tests/testthat/test-body.r
+/usr/lib64/R/library/httr/tests/testthat/test-callback.R
+/usr/lib64/R/library/httr/tests/testthat/test-config.r
+/usr/lib64/R/library/httr/tests/testthat/test-content-parse.r
+/usr/lib64/R/library/httr/tests/testthat/test-content.R
+/usr/lib64/R/library/httr/tests/testthat/test-header.r
+/usr/lib64/R/library/httr/tests/testthat/test-http-condition.R
+/usr/lib64/R/library/httr/tests/testthat/test-http-error.R
+/usr/lib64/R/library/httr/tests/testthat/test-http-head.r
+/usr/lib64/R/library/httr/tests/testthat/test-oauth-cache.R
+/usr/lib64/R/library/httr/tests/testthat/test-oauth-server-side.R
+/usr/lib64/R/library/httr/tests/testthat/test-oauth.R
+/usr/lib64/R/library/httr/tests/testthat/test-oauth_signature.R
+/usr/lib64/R/library/httr/tests/testthat/test-parse_media.R
+/usr/lib64/R/library/httr/tests/testthat/test-request.r
+/usr/lib64/R/library/httr/tests/testthat/test-response.r
+/usr/lib64/R/library/httr/tests/testthat/test-retry.R
+/usr/lib64/R/library/httr/tests/testthat/test-ssl.R
+/usr/lib64/R/library/httr/tests/testthat/test-url.r
