@@ -4,15 +4,15 @@
 #
 Name     : R-httr
 Version  : 1.4.0
-Release  : 73
+Release  : 74
 URL      : https://cran.r-project.org/src/contrib/httr_1.4.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httr_1.4.0.tar.gz
 Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
-Requires: R-withr
-Requires: R-xml2
+Requires: R-cli
 BuildRequires : R-bitops
+BuildRequires : R-cli
 BuildRequires : R-curl
 BuildRequires : R-httpuv
 BuildRequires : R-jsonlite
@@ -40,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552833478
+export SOURCE_DATE_EPOCH=1552893880
 
 %install
-export SOURCE_DATE_EPOCH=1552833478
+export SOURCE_DATE_EPOCH=1552893880
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
