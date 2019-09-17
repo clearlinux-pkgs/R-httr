@@ -1,8 +1,2 @@
 1.4.1
-R-cli
-R-curl
-R-jsonlite
-R-mime
-R-openssl
-R-withr
 R-xml2
