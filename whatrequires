@@ -3,11 +3,11 @@ R-Luminescence
 R-RNeXML
 R-WikidataR
 R-WikipediR
+R-covr
 R-devtools
 R-fitbitScraper
 R-gh
 R-lintr
-R-natserv
 R-pkgdown
 R-plotly
 R-purrr
@@ -15,7 +15,6 @@ R-pxweb
 R-rentrez
 R-rhub
 R-rotl
-R-rredlist
 R-rvest
 R-tidyverse
 R-urltools
