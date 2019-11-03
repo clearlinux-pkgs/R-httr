@@ -4,7 +4,7 @@
 #
 Name     : R-httr
 Version  : 1.4.1
-Release  : 81
+Release  : 82
 URL      : https://cran.r-project.org/src/contrib/httr_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httr_1.4.1.tar.gz
 Summary  : Useful tools for working with HTTP organised by HTTP verbs (GET(), POST(), etc). Configuration functions make it easy to control additional request components
