@@ -4,10 +4,10 @@
 #
 Name     : R-httr
 Version  : 1.4.1
-Release  : 84
+Release  : 85
 URL      : https://cran.r-project.org/src/contrib/httr_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httr_1.4.1.tar.gz
-Summary  : Useful tools for working with HTTP organised by HTTP verbs (GET(), POST(), etc). Configuration functions make it easy to control additional request components
+Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
 Requires: R-R6
@@ -20,35 +20,31 @@ BuildRequires : R-curl
 BuildRequires : R-jsonlite
 BuildRequires : R-mime
 BuildRequires : R-openssl
-BuildRequires : R-xml2
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-# httr
-<!-- badges: start -->
-[![Travis build status](https://travis-ci.org/r-lib/httr.svg?branch=master)](https://travis-ci.org/r-lib/httr)
-[![Codecov test coverage](https://codecov.io/gh/r-lib/httr/branch/master/graph/badge.svg)](https://codecov.io/gh/r-lib/httr?branch=master)
-[![CRAN status](https://www.r-pkg.org/badges/version/httr)](https://cran.r-project.org/package=httr)
-<!-- badges: end -->
+HTTP verbs (GET(), POST(), etc). Configuration functions make it easy
+    to control additional request components (authenticate(),
+    add_headers() and so on).
 
 %prep
 %setup -q -c -n httr
+cd %{_builddir}/httr
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571844771
+export SOURCE_DATE_EPOCH=1589759022
 
 %install
-export SOURCE_DATE_EPOCH=1571844771
+export SOURCE_DATE_EPOCH=1589759022
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
