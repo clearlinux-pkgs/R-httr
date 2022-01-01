@@ -1,12 +1,16 @@
 # This file contains recursive sources that require this package
 R-Luminescence
 R-RNeXML
+R-WikidataQueryServiceR
 R-WikidataR
 R-WikipediR
 R-covr
 R-devtools
 R-fitbitScraper
+R-gargle
 R-gh
+R-googledrive
+R-googlesheets4
 R-lintr
 R-pkgdown
 R-plotly
@@ -14,9 +18,10 @@ R-pxweb
 R-rentrez
 R-rhub
 R-rotl
+R-rsdmx
 R-rvest
 R-texreg
 R-tidyverse
 R-vcr
-R-viridis
+R-vembedr
 R-whoami
