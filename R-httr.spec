@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-httr
-Version  : 1.4.6
-Release  : 112
-URL      : https://cran.r-project.org/src/contrib/httr_1.4.6.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/httr_1.4.6.tar.gz
+Version  : 1.4.7
+Release  : 113
+URL      : https://cran.r-project.org/src/contrib/httr_1.4.7.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/httr_1.4.7.tar.gz
 Summary  : Tools for Working with URLs and HTTP
 Group    : Development/Tools
 License  : MIT
@@ -42,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683579814
+export SOURCE_DATE_EPOCH=1692117316
 
 %install
-export SOURCE_DATE_EPOCH=1683579814
+export SOURCE_DATE_EPOCH=1692117316
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -137,6 +137,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/httr/html/R.css
 /usr/lib64/R/library/httr/tests/testthat.R
 /usr/lib64/R/library/httr/tests/testthat/data.txt
+/usr/lib64/R/library/httr/tests/testthat/helper.R
 /usr/lib64/R/library/httr/tests/testthat/test-body.r
 /usr/lib64/R/library/httr/tests/testthat/test-callback.R
 /usr/lib64/R/library/httr/tests/testthat/test-config.r
@@ -155,4 +156,5 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/httr/tests/testthat/test-response.r
 /usr/lib64/R/library/httr/tests/testthat/test-retry.R
 /usr/lib64/R/library/httr/tests/testthat/test-ssl.R
+/usr/lib64/R/library/httr/tests/testthat/test-upload-file.R
 /usr/lib64/R/library/httr/tests/testthat/test-url.r
